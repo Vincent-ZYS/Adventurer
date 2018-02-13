@@ -1,0 +1,11 @@
+<DrugNpc>
+<Dialogue>Can I help you?</Dialogue>
+<Button>I want buy Drug</Button>
+<Button>nothing</Button>
+
+<DialogueEquip>what do you want to buy ?</DialogueEquip>
+<Equip>Equip</Equip>
+<Equip>nothing</Equip>
+
+<DialogueBar>Can you help me?</DialogueBar>
+</DrugNpc>

@@ -1,0 +1,8 @@
+1001,小瓶血药,icon-potion1,Drug,50,0,50,60
+1002,蓝药,icon-potion2,Drug,0,100,60,80
+1003,傲视盔甲,icon-potion3,Equip,0,50,0,Armor,Swordman,150,200
+1004,正义之心,icon-potion4,Equip,0,50,0,LeftHand,Common,50,70
+1005,威武青红,icon-potion5,Equip,40,0,0,RightHand,Swordman,40,80
+1006,熊之头盔,icon-potion6,Equip,0,70,0,Headgear,Swordman,80,100
+1007,麻痹骨链,icon-potion7,Equip,0,50,0,Accessory,Common,30,50
+1008,踏雪飞鸿,icon-potion8,Equip,0,0,70,Shoe,Common,120,150
