@@ -12,5 +12,9 @@ public class FuctionBar : MonoBehaviour {
     {
         Status.instance.TransformState();
     }
+    public void OnSkillButtonClick()
+    {
+        SkillUI.instance.TransformState();
+    }
    
 }

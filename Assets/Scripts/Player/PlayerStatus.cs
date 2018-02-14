@@ -66,6 +66,7 @@ public class PlayerStatus : MonoBehaviour {
         while (this.exp >= total_exp)
         {//TODO
             this.level++;
+            HeadStatusUI.instance.UpdateShow();
             this.exp -= total_exp;
             total_exp = 100 + level * 30;
         }

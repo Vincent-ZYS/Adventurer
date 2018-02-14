@@ -2319,6 +2319,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawn: {fileID: 0}
+  getExp: 10
   attackDistance: 1.2
   speed: 2
   memeorySpeed: 0
