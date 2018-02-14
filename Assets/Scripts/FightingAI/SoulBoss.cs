@@ -19,6 +19,8 @@ public class SoulBoss : Enemy {
     [Header("巡逻切换时间")]
     public  float timer=5.0f;
     public float time=0f;
+
+    
     void Start()
     {
         player = GameObject.FindGameObjectWithTag(Tags.player).transform;

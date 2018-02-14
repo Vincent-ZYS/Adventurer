@@ -9,6 +9,7 @@ public class HeadStatusUI : MonoBehaviour {
     public Text hpLabel;
     public Text mpLabel;
     private PlayerStatus playStatus;
+ private  Text name_level_label;
     public static HeadStatusUI instance;
     void Awake()
     {
@@ -17,6 +18,7 @@ public class HeadStatusUI : MonoBehaviour {
     void Start()
     {
         playStatus = GameObject.FindGameObjectWithTag(Tags.player).GetComponent<PlayerStatus>();
+        name_level_label = GameObject.Find("name_level_label").GetComponent<Text>();
         UpdateShow();
     }
     public void UpdateShow()
@@ -27,6 +29,8 @@ public class HeadStatusUI : MonoBehaviour {
 
         hpLabel.text = playStatus.hp_remain + "/" + (playStatus.hp+ playStatus.hp_plus);
         mpLabel.text = playStatus.mp_remain + "/" + playStatus.mp;
+
+        name_level_label.text ="Lv."+playStatus.level + " Player";
 
     }
 }

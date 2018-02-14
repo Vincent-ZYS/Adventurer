@@ -30,6 +30,7 @@ public class ATKAndDamage : MonoBehaviour {
         else
         {
             this.animator.SetTrigger("Dead");
+            PlayerStatus.instance.GetExp((int)this.gameObject.GetComponent<Enemy>().getExp);//怪物死亡获得经验值
             if(this.tag==Tags.soulMonster)
             {
                 BarNpc.instance.OnKillEnemy();

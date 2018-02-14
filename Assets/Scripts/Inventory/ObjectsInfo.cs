@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 #pragma warning disable 629
-public class ObjectsInfo : MonoBehaviour {
+public class ObjectsInfo : MonoBehaviour
+{
     public static ObjectsInfo instance;
     // Use this for initialization
     public TextAsset objectInfoListText;
@@ -32,7 +33,6 @@ public class ObjectsInfo : MonoBehaviour {
             ObjectInfo info = new ObjectInfo();
 
             int id = int.Parse(proArray[0]);
-
             string name = proArray[1];
 
             string icon_name = proArray[2];
