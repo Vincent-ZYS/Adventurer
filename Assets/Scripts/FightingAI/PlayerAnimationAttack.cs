@@ -20,10 +20,8 @@ public class PlayerAnimationAttack : MonoBehaviour {
         //redAttack.GetComponent<UIButton>().onClick.Add(RedAttackEvent);
         //redAttack.SetActive(false);
         GameObject.Find("AttackNormal").GetComponent<Button>().onClick.AddListener(OnNormalAttackClick);
-       
-        GameObject redAttack = GameObject.Find("AttackRed");
-        redAttack.GetComponent<Button>().onClick.AddListener(OnRedAttackClick);
-        redAttack.SetActive(false);
+     
+
 
     }
 

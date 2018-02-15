@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 public class SkillDes : MonoBehaviour {
+    public int current_id;
     public static SkillDes instance;
     public Text skill_name_label;
     public Text skill_des_label;
     public Text skill_type_label;//描述技能类型
     public Text skill_mp_label;//描述技能所需要的MP
+    [Header("存放技能Icon")]
+    public GameObject[] skill_icon;
     void Awake()
     {
         instance = this;
@@ -26,5 +29,10 @@ public class SkillDes : MonoBehaviour {
         skill_mp_label.text = "";
         skill_type_label.text = "";
         skill_name_label.text = "";
+    }
+    public void StudingButtonClick()
+    {
+        int currentSkill = current_id - 4001;
+        skill_icon[currentSkill].SetActive(true);
     }
 }
