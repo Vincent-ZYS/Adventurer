@@ -17,8 +17,11 @@ public class SkillShortCut : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     public float delay = 0.2f;
     [Header("是否进入冷却")]
     private bool isStart = false;
+   
+    [HideInInspector]
+    public Transform firePosition;//实例化的位置
 
-
+    public GameObject Scanvenger;
     private float lastIsDownTime;//最后一次点击技能按钮的时间
     void Start()
     {
@@ -26,15 +29,30 @@ public class SkillShortCut : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
         Transform temp = transform.Find("FilledImage");
          filledImage=temp.gameObject.GetComponent<Image>();
          timer_text = temp.Find("timer").gameObject.GetComponent<Text>();
+        firePosition = GameObject.FindWithTag(Tags.player).transform;
     }
     public void ReleaseSkillClick()
     {
-        if (isReleaseSkill)
+        if (isReleaseSkill&&isStart==false)
         {
             //TODO 产生粒子效果  
-
+         bool isSuccess=PlayerStatus.instance.TakeMP(thisInfo.mp);
+            if (!isSuccess)
+                return;
+            if(this.thisInfo.applyType==ApplyType.MultiTarget)
+            {
+                PlayerAnimationAttack.instance.animator.SetTrigger("AttackRanger");
+                StartCoroutine(WaitSkillAnimation());
+               
+               
+            }
             isStart = true;
         }
+    }
+    IEnumerator WaitSkillAnimation()
+    {
+        yield return new WaitForSeconds(0.6f);
+        GameObject.Instantiate(Scanvenger, firePosition.localPosition + Vector3.forward, firePosition.localRotation);
     }
     void Update()
     {

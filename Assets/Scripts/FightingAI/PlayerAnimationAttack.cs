@@ -7,7 +7,12 @@ public class PlayerAnimationAttack : MonoBehaviour {
     public bool isCanAttackB = false;//判断能否进行连招
     public float fwdTime = 0.2f;//每次攻击向前进一步
     public bool isCanAttackRange = false;
-    void Start()
+    public static PlayerAnimationAttack instance;
+    void Awake()
+    {
+        instance = this;
+    }
+     void Start()
     {
         //EventDelegate NormalAttackEvent = new EventDelegate(this, "OnNormalAttackClick");
         //GameObject.Find("NormalAttack").GetComponent<UIButton>().onClick.Add(NormalAttackEvent);
