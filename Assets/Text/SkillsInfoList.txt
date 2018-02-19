@@ -1,5 +1,5 @@
-4001,Scanvenger,skill_scavenger,Attack +250%,MultiTarget,Attack,250,0,10,5,5,Enemy,10
-4002,Blessing,skill_blessing,Heal 30HP,Passive,HP,50,0,10,6,10,Self,0
-4003,Partner,skill_partner,Call a Partner,Call,Partner,0,30,10,40,15,Self,0
-4004,Strengthen,skill_strengthen,Strengthen self speed up and Attack Up,Buff,AttackSpeed,50,10,10,20,20,Self,0
-4005,Judgement,skill_judgment,Not ready yet,MultiTarget,Attack,500,2,30,60,25,Enemy,30
+4001,Scanvenger,skill_scavenger,Attack +250%,MultiTarget,Attack,250,0,10,5,5,Enemy,10,Wind_strike
+4002,Blessing,skill_blessing,Heal 30HP,Passive,HP,50,0,10,6,10,Self,0,Heal_hold
+4003,Partner,skill_partner,Call a Partner,Call,Partner,0,30,10,40,15,Self,0,Spell_heal
+4004,Strengthen,skill_strengthen,Strengthen self speed up and Attack Up,Buff,AttackSpeed,50,10,10,20,20,Self,0,Guard_ball(Main Camera_click play)
+4005,Judgement,skill_judgment,Not ready yet,MultiTarget,Attack,500,2,30,60,25,Enemy,30,Light_sword(Main Camera_click play)

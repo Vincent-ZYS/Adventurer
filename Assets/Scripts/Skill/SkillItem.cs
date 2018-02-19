@@ -31,5 +31,6 @@ public class SkillItem : MonoBehaviour {
         SkillDes.instance.skill_type_label.text ="Skill type:"+ info.applyType.ToString();
         SkillDes.instance.skill_mp_label.text = "Consume mp:"+info.mp.ToString();
         SkillDes.instance.skill_des_label.text ="Skill Describe:"+info.des;
+        SkillDes.instance.current_id = id;
     }
 }

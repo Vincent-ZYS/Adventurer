@@ -96,6 +96,7 @@ public class SkillsInfo : MonoBehaviour {
                     break;
             }
             info.distance =int.Parse(pa[12]);
+            info.skillEffect_name = pa[13];
             skillInfoDict.Add(info.id, info);
         }
     }
@@ -139,4 +140,5 @@ public class SkillInfo
     public int level;
     public ReleaseType releaseType;
     public float distance;
+    public string skillEffect_name;
 }
