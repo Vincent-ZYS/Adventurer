@@ -30,6 +30,6 @@ public class UIAttack : MonoBehaviour {
     {
         normalAttack.SetActive(true);
         //rangeAttack.SetActive(true);
-        redAttack.SetActive(false);
+        //redAttack.SetActive(false);
     }
 }

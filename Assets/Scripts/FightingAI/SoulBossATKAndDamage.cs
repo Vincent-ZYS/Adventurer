@@ -12,7 +12,11 @@ public class SoulBossATKAndDamage :ATKAndDamage {
         base.Awake();
         player = GameObject.FindGameObjectWithTag(Tags.player).transform;
     }
-
+    void Start()
+    {
+        hp = this.GetComponent<SoulBossStatus>().hp;
+        this.GetComponent<SoulBossStatus>().hp_remain = hp;
+    }
 
     public void Attack1()
     {
@@ -32,7 +36,7 @@ public class SoulBossATKAndDamage :ATKAndDamage {
             tempPop.messageType = PopupType.player;
             GameObject.Instantiate(PopupDamgae, player.transform.position + Vector3.up, Quaternion.identity);
            
-            Debug.Log("normalAttack_Monster::" +temp);
+
         }
     }
     public void Attack2()

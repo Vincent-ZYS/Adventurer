@@ -41,7 +41,7 @@ public class PlayerAnimationAttack : MonoBehaviour {
         }
       else  if (this.animator.GetCurrentAnimatorStateInfo(0).IsName("PlayerAttackB") && isCanAttackRange)
         {
-            this.animator.SetTrigger("AttackRanger");
+            StartCoroutine(WaitAttackRanger());
 
         }
         else  {
@@ -49,10 +49,23 @@ public class PlayerAnimationAttack : MonoBehaviour {
         }
       
     }
+    IEnumerator WaitAttackRanger()
+    {
+        this.animator.SetTrigger("AttackRanger");
+        yield return new WaitForSeconds(0.6f);
+        this.animator.ResetTrigger("AttackA");
+        this.animator.ResetTrigger("AttackB");
+        this.animator.ResetTrigger("AttackRanger");
+
+    }
     public void OnRangeAttackClick()
     {
         //StartCoroutine(AttackFwd());
         this.animator.SetTrigger("AttackRanger");
+         
+        this.animator.ResetTrigger("AttackA");
+        this.animator.ResetTrigger("AttackB");
+        this.animator.ResetTrigger("AttackRanger");
     }
     public void OnRedAttackClick()
     {
@@ -76,4 +89,5 @@ public class PlayerAnimationAttack : MonoBehaviour {
     {
         isCanAttackRange = false;
     }
+
 }

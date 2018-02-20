@@ -47,6 +47,7 @@ public class ATKAndDamage : MonoBehaviour {
         if (this.tag == Tags.soulBoss)//判断是否为Boss,产生不同的打击特效
         {
             GameObject.Instantiate(Resources.Load("HitBoss"), transform.position + Vector3.up, transform.rotation);
+
         }
         else if (this.tag == Tags.soulMonster)
         {

@@ -11,7 +11,11 @@ public class SoulMonsterATKAndDamage :ATKAndDamage {
         base.Awake();
         player = GameObject.FindGameObjectWithTag(Tags.player).transform;
     }
-
+    void Start()
+    {
+        hp = this.GetComponent<SoulMonsterStatus>().hp;
+        this.GetComponent<SoulMonsterStatus>().hp_remain = hp;
+    }
     public void MonAttack()
     {
         if (Vector3.Distance(transform.position, player.position) < attackDistance)

@@ -50,6 +50,8 @@ public class SkillsInfo : MonoBehaviour {
                     break;
                 case "Call":info.applyType = ApplyType.Call;
                     break;
+                case "Dodge":info.applyType = ApplyType.Dodge;
+                    break;
 
             }
             string str_applypro = pa[5];
@@ -75,6 +77,8 @@ public class SkillsInfo : MonoBehaviour {
                     break;
                 case "Partner":
                     info.applyProperty = ApplyProperty.Partner;
+                    break;
+                case "Dodge":info.applyProperty = ApplyProperty.Dodge;
                     break;
 
             }
@@ -107,7 +111,8 @@ public enum ApplyType//作用类型
     Buff,
     SingleTarget,
     MultiTarget,
-    Call
+    Call,
+    Dodge
 }
 public enum ApplyProperty//作用属性
 {
@@ -117,7 +122,9 @@ public enum ApplyProperty//作用属性
     AttackSpeed,
     HP,
     MP,
-    Partner
+    Partner,
+    Dodge
+       
 }
 public enum ReleaseType
 {
