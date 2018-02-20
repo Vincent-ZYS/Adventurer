@@ -3,3 +3,4 @@
 4003,Partner,skill_partner,Call a Partner,Call,Partner,0,30,10,40,15,Self,0,Spell_heal
 4004,Strengthen,skill_strengthen,Strengthen self speed up and Attack Up,Buff,AttackSpeed,50,10,10,20,20,Self,0,Guard_ball(Main Camera_click play)
 4005,Judgement,skill_judgment,Not ready yet,MultiTarget,Attack,500,2,30,60,25,Enemy,30,Light_sword(Main Camera_click play)
+4006,Dodge,skill_dodge,Dodge enemy,Dodge,Dodge,10,0,0,6,0,Self,0,Ball_ice_super(click play_drag)

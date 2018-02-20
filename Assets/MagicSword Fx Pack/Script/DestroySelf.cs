@@ -19,7 +19,10 @@ public class DestroySelf : MonoBehaviour {
 		if(time > timeout){
 			time = 0f;
             Destroy(gameObject);
-            Scavenger.instance.enemyList.Clear();
+            try {
+                Scavenger.instance.enemyList.Clear();
+            }
+            catch { }
 		}
 	}
 	public void SetTimeOut(float t){

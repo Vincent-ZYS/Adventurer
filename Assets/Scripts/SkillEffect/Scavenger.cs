@@ -24,10 +24,20 @@ public class Scavenger : MonoBehaviour {
             if (index == -1)
             {
                 SkillInfo info = SkillsInfo.instance.GetSkillInfoById(skill_id);
-
-                enemy.TakeDamage(info.applyValue/100*(PlayerStatus.instance.attack+PlayerStatus.instance.attack_plus));
+                Debug.Log(info.applyValue);
+                enemy.TakeDamage(info.applyValue*(PlayerStatus.instance.attack+PlayerStatus.instance.attack_plus)/100);
+                if (enemy.tag == Tags.soulBoss)
+                {
+                    enemy.GetComponent<SoulBossStatus>().hp_remain = enemy.GetComponent<SoulBossATKAndDamage>().hp;
+                    enemy.GetComponent<SoulBossStatus>().UpdateShow();
+                }
+                if (enemy.tag == Tags.soulMonster)
+                {
+                    enemy.GetComponent<SoulMonsterStatus>().hp_remain = enemy.GetComponent<SoulMonsterATKAndDamage>().hp;
+                    enemy.GetComponent<SoulMonsterStatus>().UpdateShow();
+                }
                 DamagePopup tempPop = PopupDamgae.GetComponent<DamagePopup>();
-                tempPop.Value = info.applyValue / 100 * (PlayerStatus.instance.attack + PlayerStatus.instance.attack_plus);
+                tempPop.Value = info.applyValue* (PlayerStatus.instance.attack + PlayerStatus.instance.attack_plus)/100;
                 tempPop.messageType = PopupType.doubleEnemy;
                 GameObject.Instantiate(PopupDamgae, enemy.transform.position + Vector3.up, Quaternion.identity);
                 enemyList.Add(enemy);

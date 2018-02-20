@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 public class SkillShortCut : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerExitHandler
 {
+    public static SkillShortCut instance;
     public int thisId;
     public SkillInfo thisInfo=null;
     public float timer = 0;
@@ -13,16 +14,27 @@ public class SkillShortCut : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     private bool isDown = false;
     public Image filledImage;
     public Text timer_text;
+    public bool isDodge = false;
+    GameObject tempEffect;
+    public Vector3 targetPosition;//你要闪避的目标位置
+    GameObject player = null;
     [Header("长按延迟")]
     public float delay = 0.2f;
     [Header("是否进入冷却")]
     private bool isStart = false;
-   
+    public GameObject PopupDamgae;
     [HideInInspector]
     public Transform firePosition;//实例化的位置
-
+    [Header("技能特效")]
     public GameObject Scanvenger;
+    public GameObject Blessing;
+    public GameObject Stregnthen;
+    public GameObject dodgeEffect;
     private float lastIsDownTime;//最后一次点击技能按钮的时间
+    void Awake()
+    {
+        instance = this;
+    }
     void Start()
     {
         thisInfo = SkillsInfo.instance.GetSkillInfoById(thisId);
@@ -31,6 +43,7 @@ public class SkillShortCut : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
          timer_text = temp.Find("timer").gameObject.GetComponent<Text>();
         firePosition = GameObject.FindWithTag(Tags.player).transform;
     }
+   
     public void ReleaseSkillClick()
     {
         if (isReleaseSkill&&isStart==false)
@@ -42,17 +55,86 @@ public class SkillShortCut : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
             if(this.thisInfo.applyType==ApplyType.MultiTarget)
             {
                 PlayerAnimationAttack.instance.animator.SetTrigger("AttackRanger");
-                StartCoroutine(WaitSkillAnimation());
+               
+                    StartCoroutine(WaitSkillAnimation());
+                
                
                
+            }
+            if(this.thisInfo.applyType==ApplyType.Passive)
+            {
+                if(this.thisInfo.applyProperty==ApplyProperty.HP)
+                {
+                    GameObject.Instantiate(Blessing, firePosition.localPosition, Quaternion.identity);
+                    PlayerStatus.instance.GetDrug(thisInfo.applyValue, 0);
+                    DamagePopup tempPop = PopupDamgae.GetComponent<DamagePopup>();
+                    tempPop.Value = thisInfo.applyValue;
+                    tempPop.messageType = PopupType.treatment;
+                    GameObject.Instantiate(PopupDamgae,firePosition.localPosition, Quaternion.identity);
+                    HeadStatusUI.instance.UpdateShow();
+                }
+            }
+            if (this.thisInfo.applyType == ApplyType.Buff)
+            {
+                if (this.thisInfo.applyProperty == ApplyProperty.AttackSpeed)
+                {
+                    StartCoroutine(WaitStregnthen());
+                    
+                }
+            }
+            if(this.thisInfo.applyType==ApplyType.Dodge)
+            {
+                if(thisInfo.applyProperty==ApplyProperty.Dodge)
+                {
+
+                    player = GameObject.FindWithTag(Tags.player);
+
+                    targetPosition = player.transform.position + player.transform.forward * 5;
+                    tempEffect = GameObject.Instantiate(dodgeEffect, player.transform.position, player.transform.rotation);
+                    tempEffect.transform.SetParent(player.transform);
+
+                    isDodge = true;
+                }
             }
             isStart = true;
         }
     }
+    IEnumerator WaitStregnthen()
+    {
+      GameObject tempSkill=  GameObject.Instantiate(Stregnthen, firePosition.localPosition, Quaternion.identity);
+        tempSkill.transform.SetParent(firePosition);
+     
+        PlayerStatus.instance.attack += thisInfo.applyValue* PlayerStatus.instance.attack/100;
+        PlayerStatus.instance.speed += thisInfo.applyValue * PlayerStatus.instance.speed/100;
+      
+        yield return  new WaitForSeconds(thisInfo.applyTime);
+        Destroy(tempSkill);
+        PlayerStatus.instance.attack -= thisInfo.applyValue* PlayerStatus.instance.attack/100;
+        PlayerStatus.instance.speed -= thisInfo.applyValue * PlayerStatus.instance.speed/100;
+
+    }
     IEnumerator WaitSkillAnimation()
     {
         yield return new WaitForSeconds(0.6f);
-        GameObject.Instantiate(Scanvenger, firePosition.localPosition + Vector3.forward, firePosition.localRotation);
+     if(PlayerAnimationAttack.instance.animator.GetCurrentAnimatorStateInfo(0).IsName("PlayerAttackRange")){
+            GameObject.Instantiate(Scanvenger, firePosition.localPosition + Vector3.forward, firePosition.localRotation); }
+    }
+    void LateUpdate()
+    {
+        if (isDodge)
+        {
+           
+            if (Vector3.Distance(player.transform.position, targetPosition) >0.5f)
+            {
+                player.transform.position = Vector3.Lerp(player.transform.position, targetPosition, thisInfo.applyValue * Time.deltaTime);
+               
+            }
+            else
+            {
+                isDodge = false;
+                Destroy(tempEffect);
+            }
+        }
     }
     void Update()
     {
