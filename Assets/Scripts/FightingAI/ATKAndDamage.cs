@@ -6,7 +6,7 @@ public class ATKAndDamage : MonoBehaviour {
     public float hp = 100;
     public float normalAttack = 50;
     public float attackDistance = 1;
-    private Animator animator;
+    public Animator animator;
     public AudioClip death;
   protected  void Awake()
     {
@@ -30,13 +30,23 @@ public class ATKAndDamage : MonoBehaviour {
         else
         {
             this.animator.SetTrigger("Dead");
-            PlayerStatus.instance.GetExp((int)this.gameObject.GetComponent<Enemy>().getExp);//怪物死亡获得经验值
-            if(this.tag==Tags.soulMonster)
+            if (this.tag != Tags.pet)
             {
-                BarNpc.instance.OnKillEnemy();
+                PlayerStatus.instance.GetExp((int)this.gameObject.GetComponent<Enemy>().getExp);//怪物死亡获得经验值
+
+                if (this.tag == Tags.soulMonster)
+                {
+                    BarNpc.instance.OnKillEnemy();
+                }
+                this.gameObject.GetComponent<Enemy>().spawn.MinusNumber();
+                AudioSource.PlayClipAtPoint(death, transform.position, 0.5f);
             }
-            this.gameObject.GetComponent<Enemy>().spawn.MinusNumber();
-            AudioSource.PlayClipAtPoint(death, transform.position, 0.5f);
+            else
+            {
+                Destroy(this.gameObject, 1.2f);
+            }
+
+
             if (this.tag == Tags.soulBoss || this.tag == Tags.soulMonster)
             {
                 SpawnManager.instance.enemyList.Remove(this.gameObject);//移除死亡元素

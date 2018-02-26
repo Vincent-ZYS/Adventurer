@@ -7,4 +7,5 @@ public class Tags {
     public const string soulMonster = "SoulMonster";
     public const string soulBoss = "SoulBoss";
     public const string ground = "Ground";
+    public const string pet = "Pet";
 }

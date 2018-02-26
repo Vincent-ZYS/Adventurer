@@ -55,6 +55,13 @@ public class SoulMonster : Enemy {
     void AutoAttack()
     {
         Vector3 targetPos = player.position;
+        if (SkillShortCut.instance.currentPet != null)
+        {
+            if (Vector3.Distance(transform.position, targetPos) >= Vector3.Distance(transform.position, SkillShortCut.instance.currentPet.transform.position))
+            {
+                targetPos = SkillShortCut.instance.currentPet.transform.position;
+            }
+        }
         targetPos.y = transform.position.y;
         transform.LookAt(targetPos);
         float distance = Vector3.Distance(targetPos, transform.position);
@@ -110,7 +117,14 @@ public class SoulMonster : Enemy {
             AutoAttack();
 
         }
-       
+        if (SkillShortCut.instance.currentPet != null)
+        {
+            if (Vector3.Distance(transform.position, SkillShortCut.instance.currentPet.transform.position) < maxDistance)
+            {
+                AutoAttack();
+            }
+        }
+
     }
     void OnControllerColliderHit(ControllerColliderHit hit)
     {

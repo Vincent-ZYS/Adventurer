@@ -19,7 +19,7 @@ public class SoulBoss : Enemy {
     [Header("巡逻切换时间")]
     public  float timer=5.0f;
     public float time=0f;
-
+ 
     
     void Start()
     {
@@ -54,6 +54,13 @@ public class SoulBoss : Enemy {
     void AutoAttack()
     {
         Vector3 targetPos = player.position;
+        if(SkillShortCut.instance.currentPet!=null)
+        {
+            if (Vector3.Distance(transform.position, targetPos) >= Vector3.Distance(transform.position, SkillShortCut.instance.currentPet.transform.position))
+            {
+                targetPos = SkillShortCut.instance.currentPet.transform.position;
+            }
+        }
         targetPos.y = transform.position.y;
         transform.LookAt(targetPos);
         float distance = Vector3.Distance(targetPos, transform.position);
@@ -116,6 +123,13 @@ public class SoulBoss : Enemy {
 
             AutoAttack();
 
+        }
+        if (SkillShortCut.instance.currentPet != null)
+        {
+            if (Vector3.Distance(transform.position, SkillShortCut.instance.currentPet.transform.position) < maxDistance)
+            {
+                AutoAttack();
+            }
         }
        
     }

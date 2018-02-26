@@ -32,5 +32,19 @@ public class SoulMonsterATKAndDamage :ATKAndDamage {
             tempPop.messageType = PopupType.player;
             GameObject.Instantiate(PopupDamgae, player.transform.position + Vector3.up, Quaternion.identity);
         }
+        else if (SkillShortCut.instance.currentPet != null)
+        {
+            if (Vector3.Distance(transform.position, SkillShortCut.instance.currentPet.transform.position) < attackDistance)
+            {
+                GameObject tempPet = SkillShortCut.instance.currentPet;
+                tempPet.GetComponent<ATKAndDamage>().TakeDamage(normalAttack);
+                DamagePopup tempPop = PopupDamgae.GetComponent<DamagePopup>();
+                tempPop.Value = (int)normalAttack;
+                tempPop.messageType = PopupType.player;
+                GameObject.Instantiate(PopupDamgae, tempPet.transform.position + Vector3.up, Quaternion.identity);
+
+
+            }
+        }
     }
 }

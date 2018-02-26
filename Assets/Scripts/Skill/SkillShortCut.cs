@@ -30,8 +30,13 @@ public class SkillShortCut : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     public GameObject Blessing;
     public GameObject Stregnthen;
     public GameObject dodgeEffect;
+    public GameObject partner;
     private float lastIsDownTime;//最后一次点击技能按钮的时间
-    void Awake()
+    [Header("Pet")]
+    public GameObject pet;
+    [HideInInspector]
+    public GameObject currentPet = null;
+   void Awake()
     {
         instance = this;
     }
@@ -56,7 +61,7 @@ public class SkillShortCut : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
             {
                 PlayerAnimationAttack.instance.animator.SetTrigger("AttackRanger");
                
-                    StartCoroutine(WaitSkillAnimation());
+                    StartCoroutine(WaitSkillAnimation(Scanvenger));
                 
                
                
@@ -96,6 +101,15 @@ public class SkillShortCut : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
                     isDodge = true;
                 }
             }
+            if(this.thisInfo.applyType==ApplyType.Call)
+            {
+                if(thisInfo.applyProperty==ApplyProperty.Partner)
+                {
+                    PlayerAnimationAttack.instance.animator.SetTrigger("AttackRanger");
+                    StartCoroutine(WaitSkillAnimation(partner));
+                    
+                }
+            }
             isStart = true;
         }
     }
@@ -113,11 +127,20 @@ public class SkillShortCut : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
         PlayerStatus.instance.speed -= thisInfo.applyValue * PlayerStatus.instance.speed/100;
 
     }
-    IEnumerator WaitSkillAnimation()
+    IEnumerator WaitSkillAnimation(GameObject temp)
     {
         yield return new WaitForSeconds(0.6f);
      if(PlayerAnimationAttack.instance.animator.GetCurrentAnimatorStateInfo(0).IsName("PlayerAttackRange")){
-            GameObject.Instantiate(Scanvenger, firePosition.localPosition + Vector3.forward, firePosition.localRotation); }
+            GameObject.Instantiate(temp, firePosition.localPosition + Vector3.forward, firePosition.localRotation); }
+     if(temp==partner)
+        {
+            yield return new WaitForSeconds(0.5f);
+           currentPet= GameObject.Instantiate(pet, firePosition.localPosition + Vector3.forward, firePosition.localRotation);
+            yield return new WaitForSeconds(30.0f);
+            currentPet.GetComponent<Animator>().SetTrigger("Dead");
+            Destroy(currentPet,2.0f);
+
+        }
     }
     void LateUpdate()
     {

@@ -16,6 +16,8 @@ TagManager:
   - SoulMonster
   - SoulBoss
   - Npc
+  - shield
+  - Pet
   layers:
   - Default
   - TransparentFX
@@ -28,8 +30,8 @@ TagManager:
   - Quad
   - InventoryItem
   - Player
-  - 
-  - 
+  - Enemy
+  - Pet
   - 
   - 
   - 

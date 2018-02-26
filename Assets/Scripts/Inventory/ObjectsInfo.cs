@@ -22,100 +22,102 @@ public class ObjectsInfo : MonoBehaviour
     }
     void ReadInfo()
     {
-        string text = objectInfoListText.text;
+        try {
+            string text = objectInfoListText.text;
 
-        string[] strArray = text.Split('\n');
+            string[] strArray = text.Split('\n');
 
 
-        foreach (string str in strArray)
-        {
-            string[] proArray = str.Split(',');
-            ObjectInfo info = new ObjectInfo();
-
-            int id = int.Parse(proArray[0]);
-            string name = proArray[1];
-
-            string icon_name = proArray[2];
-            string str_type = proArray[3];
-            ObjcetType type = ObjcetType.Drug;
-            switch (str_type)
+            foreach (string str in strArray)
             {
-                case "Drug":
-                    type = ObjcetType.Drug;
-                    break;
-                case "Equip":
-                    type = ObjcetType.Equip;
-                    break;
-                case "Mat":
-                    type = ObjcetType.Mat;
-                    break;
+                string[] proArray = str.Split(',');
+                ObjectInfo info = new ObjectInfo();
 
-            }
-            info.id = id;
-            info.name = name;
-            info.icon_name = icon_name;
-            info.type = type;
-            if (type == ObjcetType.Drug)
-            {
-                int hp = int.Parse(proArray[4]);
-                int mp = int.Parse(proArray[5]);
-                int price_sell = int.Parse(proArray[6]);
-                int price_buy = int.Parse(proArray[7]);
-                info.price_buy = price_buy;
-                info.hp = hp;
-                info.mp = mp;
-                info.price_sell = price_sell;
+                int id = int.Parse(proArray[0]);
+                string name = proArray[1];
 
-            }
-            else if (type == ObjcetType.Equip)
-            {
-                info.attack = int.Parse(proArray[4]);
-                info.def = int.Parse(proArray[5]);
-                info.speed = int.Parse(proArray[6]);
-                info.price_sell = int.Parse(proArray[9]);
-                info.price_buy = int.Parse(proArray[10]);
-                string str_dresstype = proArray[7];
-                switch (str_dresstype)
+                string icon_name = proArray[2];
+                string str_type = proArray[3];
+                ObjcetType type = ObjcetType.Drug;
+                switch (str_type)
                 {
-                    case "Headgear":
-                        info.dressType = DressType.Headgear;
+                    case "Drug":
+                        type = ObjcetType.Drug;
                         break;
-                    case "Armor":
-                        info.dressType = DressType.Armor;
+                    case "Equip":
+                        type = ObjcetType.Equip;
                         break;
-                    case "LeftHand":
-                        info.dressType = DressType.LeftHand;
+                    case "Mat":
+                        type = ObjcetType.Mat;
                         break;
-                    case "RightHand":
-                        info.dressType = DressType.RightHand;
-                        break;
-                    case "Shoe":
-                        info.dressType = DressType.Shoe;
-                        break;
-                    case "Accessory":
-                        info.dressType = DressType.Accessory;
-                        break;
+
                 }
-                string str_apptype = proArray[8];
-                switch (str_apptype)
+                info.id = id;
+                info.name = name;
+                info.icon_name = icon_name;
+                info.type = type;
+                if (type == ObjcetType.Drug)
                 {
-                    case "Swordman":
-                        info.applicationType = ApplicationType.Swordman;
-                        break;
-                    case "Magician":
-                        info.applicationType = ApplicationType.Magician;
-                        break;
-                    case "Common":
-                        info.applicationType = ApplicationType.Common;
-                        break;
+                    int hp = int.Parse(proArray[4]);
+                    int mp = int.Parse(proArray[5]);
+                    int price_sell = int.Parse(proArray[6]);
+                    int price_buy = int.Parse(proArray[7]);
+                    info.price_buy = price_buy;
+                    info.hp = hp;
+                    info.mp = mp;
+                    info.price_sell = price_sell;
+
+                }
+                else if (type == ObjcetType.Equip)
+                {
+                    info.attack = int.Parse(proArray[4]);
+                    info.def = int.Parse(proArray[5]);
+                    info.speed = int.Parse(proArray[6]);
+                    info.price_sell = int.Parse(proArray[9]);
+                    info.price_buy = int.Parse(proArray[10]);
+                    string str_dresstype = proArray[7];
+                    switch (str_dresstype)
+                    {
+                        case "Headgear":
+                            info.dressType = DressType.Headgear;
+                            break;
+                        case "Armor":
+                            info.dressType = DressType.Armor;
+                            break;
+                        case "LeftHand":
+                            info.dressType = DressType.LeftHand;
+                            break;
+                        case "RightHand":
+                            info.dressType = DressType.RightHand;
+                            break;
+                        case "Shoe":
+                            info.dressType = DressType.Shoe;
+                            break;
+                        case "Accessory":
+                            info.dressType = DressType.Accessory;
+                            break;
+                    }
+                    string str_apptype = proArray[8];
+                    switch (str_apptype)
+                    {
+                        case "Swordman":
+                            info.applicationType = ApplicationType.Swordman;
+                            break;
+                        case "Magician":
+                            info.applicationType = ApplicationType.Magician;
+                            break;
+                        case "Common":
+                            info.applicationType = ApplicationType.Common;
+                            break;
+                    }
+
                 }
 
-            }
-
-            objectInfoDict.Add(id, info);
+                objectInfoDict.Add(id, info);
 
 
-        }
+            } }
+        catch { }
 
     }
 }

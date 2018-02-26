@@ -360,12 +360,12 @@ Prefab:
     - target: {fileID: 224223249672166242, guid: 9b622eeb2a3d64042ae387d1ccbf575b,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: -41548.66
+      value: -3459.396
       objectReference: {fileID: 0}
     - target: {fileID: 224223249672166242, guid: 9b622eeb2a3d64042ae387d1ccbf575b,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -41548.656
+      value: -3459.3958
       objectReference: {fileID: 0}
     - target: {fileID: 114734474843908976, guid: 9b622eeb2a3d64042ae387d1ccbf575b,
         type: 2}
@@ -419,6 +419,121 @@ Prefab:
       propertyPath: normalAttack
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 224143178729657246, guid: 9b622eeb2a3d64042ae387d1ccbf575b,
+        type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224143178729657246, guid: 9b622eeb2a3d64042ae387d1ccbf575b,
+        type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1433713013932860, guid: 9b622eeb2a3d64042ae387d1ccbf575b, type: 2}
+      propertyPath: m_Name
+      value: Native_button
+      objectReference: {fileID: 0}
+    - target: {fileID: 114556599335967092, guid: 9b622eeb2a3d64042ae387d1ccbf575b,
+        type: 2}
+      propertyPath: m_Text
+      value: Armor
+      objectReference: {fileID: 0}
+    - target: {fileID: 114250443173831490, guid: 9b622eeb2a3d64042ae387d1ccbf575b,
+        type: 2}
+      propertyPath: m_Text
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 114336406857005340, guid: 9b622eeb2a3d64042ae387d1ccbf575b,
+        type: 2}
+      propertyPath: m_Text
+      value: Shield
+      objectReference: {fileID: 0}
+    - target: {fileID: 114103288256394818, guid: 9b622eeb2a3d64042ae387d1ccbf575b,
+        type: 2}
+      propertyPath: m_Text
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 114699580032297188, guid: 9b622eeb2a3d64042ae387d1ccbf575b,
+        type: 2}
+      propertyPath: m_Text
+      value: Sword
+      objectReference: {fileID: 0}
+    - target: {fileID: 114130571248153354, guid: 9b622eeb2a3d64042ae387d1ccbf575b,
+        type: 2}
+      propertyPath: m_Text
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 114621506222170602, guid: 9b622eeb2a3d64042ae387d1ccbf575b,
+        type: 2}
+      propertyPath: m_Text
+      value: Helement
+      objectReference: {fileID: 0}
+    - target: {fileID: 114959394516496500, guid: 9b622eeb2a3d64042ae387d1ccbf575b,
+        type: 2}
+      propertyPath: m_Text
+      value: Necklace
+      objectReference: {fileID: 0}
+    - target: {fileID: 114550694359145200, guid: 9b622eeb2a3d64042ae387d1ccbf575b,
+        type: 2}
+      propertyPath: m_Text
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114168022871539808, guid: 9b622eeb2a3d64042ae387d1ccbf575b,
+        type: 2}
+      propertyPath: m_Text
+      value: Shoes
+      objectReference: {fileID: 0}
+    - target: {fileID: 114413973620721078, guid: 9b622eeb2a3d64042ae387d1ccbf575b,
+        type: 2}
+      propertyPath: m_Text
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 4990837932407214, guid: 9b622eeb2a3d64042ae387d1ccbf575b, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -1093.81
+      objectReference: {fileID: 0}
+    - target: {fileID: 4990837932407214, guid: 9b622eeb2a3d64042ae387d1ccbf575b, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -374.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4990837932407214, guid: 9b622eeb2a3d64042ae387d1ccbf575b, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -19.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4788202579179190, guid: 9b622eeb2a3d64042ae387d1ccbf575b, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -856.4668
+      objectReference: {fileID: 0}
+    - target: {fileID: 4788202579179190, guid: 9b622eeb2a3d64042ae387d1ccbf575b, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -371.8702
+      objectReference: {fileID: 0}
+    - target: {fileID: 4788202579179190, guid: 9b622eeb2a3d64042ae387d1ccbf575b, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -8.039719
+      objectReference: {fileID: 0}
+    - target: {fileID: 114081224613859932, guid: 9b622eeb2a3d64042ae387d1ccbf575b,
+        type: 2}
+      propertyPath: angle
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 114149276177399138, guid: 9b622eeb2a3d64042ae387d1ccbf575b,
+        type: 2}
+      propertyPath: Scanvenger
+      value: 
+      objectReference: {fileID: 100000, guid: 54ade6a75403403429a5000df181def7, type: 2}
+    - target: {fileID: 114149276177399138, guid: 9b622eeb2a3d64042ae387d1ccbf575b,
+        type: 2}
+      propertyPath: partner
+      value: 
+      objectReference: {fileID: 1558166636821178, guid: 1eb626d50ff53af48990b6007d71b3ca,
+        type: 2}
+    - target: {fileID: 114149276177399138, guid: 9b622eeb2a3d64042ae387d1ccbf575b,
+        type: 2}
+      propertyPath: pet
+      value: 
+      objectReference: {fileID: 1209907307535820, guid: b6dc3e53bb1b8d9409a0039d913d7063,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9b622eeb2a3d64042ae387d1ccbf575b, type: 2}
   m_IsPrefabParent: 0
