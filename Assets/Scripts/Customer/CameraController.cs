@@ -51,7 +51,7 @@ public class CameraController : MonoBehaviour {
        
         float x = transform.eulerAngles.x;
         float y = transform.localEulerAngles.y;
-        if (x < 0 || x > 80)
+        if (x < 10|| x > 70)
         {
             transform.position = originalPos;
             transform.rotation = originalRotation;

@@ -32,6 +32,7 @@ public class SoulMonster : Enemy {
     void Update()
     {
         float distance = Vector3.Distance(GameObject.FindWithTag(Tags.player).transform.position, transform.position);
+
         if(distance<maxDistance)
         {
             AutoAttack();
@@ -55,11 +56,11 @@ public class SoulMonster : Enemy {
     void AutoAttack()
     {
         Vector3 targetPos = player.position;
-        if (SkillShortCut.instance.currentPet != null)
+        if (GameObject.Find("skill_Partner").GetComponent<SkillShortCut>().currentPet != null)
         {
-            if (Vector3.Distance(transform.position, targetPos) >= Vector3.Distance(transform.position, SkillShortCut.instance.currentPet.transform.position))
+            if (Vector3.Distance(transform.position, targetPos) >= Vector3.Distance(transform.position, GameObject.Find("skill_Partner").GetComponent<SkillShortCut>().currentPet.transform.position))
             {
-                targetPos = SkillShortCut.instance.currentPet.transform.position;
+                targetPos = GameObject.Find("skill_Partner").GetComponent<SkillShortCut>().currentPet.transform.position;
             }
         }
         targetPos.y = transform.position.y;
@@ -117,9 +118,9 @@ public class SoulMonster : Enemy {
             AutoAttack();
 
         }
-        if (SkillShortCut.instance.currentPet != null)
+        if (GameObject.Find("skill_Partner").GetComponent<SkillShortCut>().currentPet != null)
         {
-            if (Vector3.Distance(transform.position, SkillShortCut.instance.currentPet.transform.position) < maxDistance)
+            if (Vector3.Distance(transform.position, GameObject.Find("skill_Partner").GetComponent<SkillShortCut>().currentPet.transform.position) < maxDistance)
             {
                 AutoAttack();
             }

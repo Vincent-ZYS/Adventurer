@@ -34,7 +34,6 @@ public class ShopEquip : MonoBehaviour {
     void Buy(int id)
     {
         ObjectInfo tempInfo = ObjectsInfo.instance.GetObjectInfoById(buy_id);
-        Debug.Log("tempInfo::" + id);
         //int temp=tempInfo.price_sell;
         buy_id = id;
 

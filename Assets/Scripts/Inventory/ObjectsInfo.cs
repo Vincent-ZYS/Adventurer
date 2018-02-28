@@ -66,6 +66,7 @@ public class ObjectsInfo : MonoBehaviour
                     info.hp = hp;
                     info.mp = mp;
                     info.price_sell = price_sell;
+                    info.coldTime = int.Parse(proArray[8]);
 
                 }
                 else if (type == ObjcetType.Equip)
@@ -160,4 +161,5 @@ public class ObjectInfo//存储物品的熟悉类
     public int speed;
     public DressType dressType;
     public ApplicationType applicationType;
+    public float coldTime;
 }

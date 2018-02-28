@@ -53,7 +53,7 @@ public class PlayerMove : MonoBehaviour {
     {
         if(hit.gameObject.tag==Tag.enviroment)
         {
-            SkillShortCut.instance.targetPosition =transform.position + transform.forward *8;
+            GameObject.Find("skill_dodge").GetComponent<SkillShortCut>().targetPosition =transform.position + transform.forward *8;
           
 
         }
