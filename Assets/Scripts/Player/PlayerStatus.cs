@@ -52,9 +52,9 @@ public class PlayerStatus : MonoBehaviour {
         mp_remain += mp;
         if (hp_remain > this.hp+hp_plus)
         {
-            hp_remain = this.hp+hp_plus;
+            hp_remain = this.hp;
         }
-        if (mp_remain > mp)
+        if (mp_remain > this.mp)
         {
             mp_remain = this.mp;
         }
@@ -65,7 +65,9 @@ public class PlayerStatus : MonoBehaviour {
         int total_exp = 100 + level * 30;
         while (this.exp >= total_exp)
         {//TODO
+            point_remain += 5;
             this.level++;
+
             HeadStatusUI.instance.UpdateShow();
             this.exp -= total_exp;
             total_exp = 100 + level * 30;

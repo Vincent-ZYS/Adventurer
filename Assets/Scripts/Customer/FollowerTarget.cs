@@ -15,6 +15,8 @@ public class FollowerTarget : MonoBehaviour {
     void Start()
     {
         player = GameObject.FindWithTag(Tag.player).transform;
+        float z= player.transform.position.z;
+        transform.position = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
         offset = transform.position - player.position;
     }
 
@@ -23,62 +25,6 @@ public class FollowerTarget : MonoBehaviour {
     {
         transform.position = player.position + offset;
 
-        if (this.gameObject != GameObject.Find("Main Camera"))
-        {
-        }
-        else {
-            RotateView();
-            ScrollWhell();
-        }
     }
-    void ScrollWhell()
-    {
-        distance = offset.magnitude;//获得原来的一个距离
-        distance -= Input.GetAxis("Mouse ScrollWheel") * scrollSpeed * Time.deltaTime;
-        distance = Mathf.Clamp(distance, 2, 18);
-        offset = offset.normalized * distance;
-    }
-    void RotateView()
-    {
-        if (Input.GetMouseButtonDown(0)&&(EventSystem.current.IsPointerOverGameObject()==false))
-        {
-            isRotate = true;
-        }
-        if ( (Input.touchCount >  0&& Input.GetTouch(0).phase == TouchPhase.Began)&&(ETCInput.GetAxis("Horizontal")==0||ETCInput.GetAxis("Vertical")==0))
-        {
 
-            if (EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId)==false)
-            {
-                isRotate = true;
-            } 
-        }
-        if ((Input.touchCount > 1 && Input.GetTouch(1).phase == TouchPhase.Began))
-        {
-
-            if (EventSystem.current.IsPointerOverGameObject(Input.GetTouch(1).fingerId)==false)
-            {
-                isRotate = true;
-            }
-        }
-
-        if (Input.GetMouseButtonUp(0))
-        {
-            isRotate = false;
-        }
-        if (isRotate)
-        {
-            transform.RotateAround(player.position, player.up, Input.GetAxis("Mouse X") * rotateSpeed);
-            Vector3 originalPos = transform.position;
-            Quaternion originalRotation = transform.rotation;
-
-            transform.RotateAround(player.position, transform.right, -rotateSpeed * Input.GetAxis("Mouse Y"));
-            float x = transform.eulerAngles.x;
-            if (x < 10 || x > 80)
-            {
-                transform.position = originalPos;
-                transform.rotation = originalRotation;
-            }
-        }
-        offset = transform.position - player.position;
-    }
 }

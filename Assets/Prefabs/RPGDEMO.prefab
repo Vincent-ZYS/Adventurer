@@ -292,7 +292,7 @@ GameObject:
   - component: {fileID: 4335278724122956}
   m_Layer: 0
   m_Name: Enviroments
-  m_TagString: Ground
+  m_TagString: Enviorment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -429,7 +429,7 @@ GameObject:
   - component: {fileID: 23453177171365444}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: Untagged
+  m_TagString: Enviorment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1312,7 +1312,7 @@ GameObject:
   - component: {fileID: 23606176044147996}
   m_Layer: 0
   m_Name: Cube (3)
-  m_TagString: Untagged
+  m_TagString: Enviorment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1813,7 +1813,7 @@ GameObject:
   - component: {fileID: 23215130627820694}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Enviorment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2663,7 +2663,7 @@ GameObject:
   - component: {fileID: 23968631293738662}
   m_Layer: 0
   m_Name: Cube (2)
-  m_TagString: Untagged
+  m_TagString: Enviorment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3073,7 +3073,7 @@ GameObject:
   - component: {fileID: 114693856175397428}
   - component: {fileID: 114465767278392930}
   m_Layer: 5
-  m_Name: Native_button (1)
+  m_Name: Native_button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4030,7 +4030,7 @@ GameObject:
   - component: {fileID: 23104502505083370}
   m_Layer: 0
   m_Name: Cube (5)
-  m_TagString: Untagged
+  m_TagString: Enviorment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5720,7 +5720,7 @@ GameObject:
   - component: {fileID: 23978688911231948}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Enviorment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6767,7 +6767,7 @@ GameObject:
   - component: {fileID: 23792430254586832}
   m_Layer: 0
   m_Name: Cube (4)
-  m_TagString: Untagged
+  m_TagString: Enviorment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8462,7 +8462,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1263389982183476}
   m_LocalRotation: {x: -0.6466802, y: -0.019443527, z: 0.016494038, w: -0.76233506}
-  m_LocalPosition: {x: -856.656, y: -372.4801, z: -11.731384}
+  m_LocalPosition: {x: -856.4668, y: -371.8702, z: -8.039719}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 224519354882104356}
@@ -8761,7 +8761,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1234069821462324}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1094.2642, y: -375.58374, z: -27.98}
+  m_LocalPosition: {x: -1093.81, y: -374.12, z: -19.12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4388856076493266}
@@ -11799,7 +11799,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7971833c57c5c4d4880268fb680c6e4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  angle: 30
+  angle: 45
   distance: 8
   nearDis: 5
   farDis: 13
@@ -11950,7 +11950,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 100
+  m_Text: 70
 --- !u!114 &114105551644440898
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12370,7 +12370,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 100
+  m_Text: 80
 --- !u!114 &114131132296251920
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12799,13 +12799,17 @@ MonoBehaviour:
   filledImage: {fileID: 0}
   timer_text: {fileID: 0}
   isDodge: 0
+  targetPosition: {x: 0, y: 0, z: 0}
   delay: 0.2
   PopupDamgae: {fileID: 0}
   firePosition: {fileID: 4252295299422232}
-  Scanvenger: {fileID: 0}
+  Scanvenger: {fileID: 100000, guid: 54ade6a75403403429a5000df181def7, type: 2}
   Blessing: {fileID: 0}
   Stregnthen: {fileID: 0}
   dodgeEffect: {fileID: 0}
+  partner: {fileID: 1558166636821178, guid: 1eb626d50ff53af48990b6007d71b3ca, type: 2}
+  pet: {fileID: 1209907307535820, guid: b6dc3e53bb1b8d9409a0039d913d7063, type: 2}
+  currentPet: {fileID: 0}
 --- !u!114 &114156109795344288
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13113,7 +13117,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u50B2\u89C6\u76D4\u7532"
+  m_Text: Shoes
 --- !u!114 &114168840201529248
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -14208,6 +14212,7 @@ MonoBehaviour:
   filledImage: {fileID: 114170771056504598}
   timer_text: {fileID: 0}
   isDodge: 0
+  targetPosition: {x: 0, y: 0, z: 0}
   delay: 0.2
   PopupDamgae: {fileID: 0}
   firePosition: {fileID: 4990837932407214}
@@ -14215,6 +14220,9 @@ MonoBehaviour:
   Blessing: {fileID: 0}
   Stregnthen: {fileID: 0}
   dodgeEffect: {fileID: 0}
+  partner: {fileID: 0}
+  pet: {fileID: 0}
+  currentPet: {fileID: 0}
 --- !u!114 &114250443173831490
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -14247,7 +14255,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 100
+  m_Text: 200
 --- !u!114 &114252684671684636
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -15584,7 +15592,7 @@ MonoBehaviour:
   isSwipeOut: 0
   showPSInspector: 0
   showSpriteInspector: 1
-  showEventInspector: 0
+  showEventInspector: 1
   showBehaviourInspector: 0
   showAxesInspector: 1
   showTouchEventInspector: 0
@@ -16128,7 +16136,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u50B2\u89C6\u76D4\u7532"
+  m_Text: Shield
 --- !u!114 &114338611021047992
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -16141,6 +16149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
+  playerJoy: {fileID: 114317618366517768}
   animator: {fileID: 0}
 --- !u!114 &114343220517434142
 MonoBehaviour:
@@ -17140,7 +17149,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 100
+  m_Text: 150
 --- !u!114 &114416362130717966
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -18283,6 +18292,7 @@ MonoBehaviour:
   filledImage: {fileID: 0}
   timer_text: {fileID: 0}
   isDodge: 0
+  targetPosition: {x: 0, y: 0, z: 0}
   delay: 0.2
   PopupDamgae: {fileID: 0}
   firePosition: {fileID: 4252295299422232}
@@ -18290,6 +18300,9 @@ MonoBehaviour:
   Blessing: {fileID: 0}
   Stregnthen: {fileID: 0}
   dodgeEffect: {fileID: 0}
+  partner: {fileID: 0}
+  pet: {fileID: 0}
+  currentPet: {fileID: 0}
 --- !u!114 &114494178871315078
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -18823,7 +18836,7 @@ MonoBehaviour:
   mp: 100
   hp_remain: 500
   mp_remain: 100
-  level: 20
+  level: 25
   exp: 0
   attack: 20
   attack_plus: 0
@@ -18865,7 +18878,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 100
+  m_Text: 50
 --- !u!114 &114555969140818798
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -18925,7 +18938,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u50B2\u89C6\u76D4\u7532"
+  m_Text: Armor
 --- !u!114 &114556733306351860
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -19924,7 +19937,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u50B2\u89C6\u76D4\u7532"
+  m_Text: Helement
 --- !u!114 &114623581045804094
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -20981,7 +20994,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u50B2\u89C6\u76D4\u7532"
+  m_Text: Sword
 --- !u!114 &114699900493749786
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -21031,6 +21044,7 @@ MonoBehaviour:
   filledImage: {fileID: 0}
   timer_text: {fileID: 0}
   isDodge: 0
+  targetPosition: {x: 0, y: 0, z: 0}
   delay: 0.2
   PopupDamgae: {fileID: 0}
   firePosition: {fileID: 4252295299422232}
@@ -21038,6 +21052,9 @@ MonoBehaviour:
   Blessing: {fileID: 0}
   Stregnthen: {fileID: 100000, guid: 0211f56c1dcc00f479c8d7342db06c51, type: 2}
   dodgeEffect: {fileID: 0}
+  partner: {fileID: 0}
+  pet: {fileID: 0}
+  currentPet: {fileID: 0}
 --- !u!114 &114701258822229122
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -21147,6 +21164,7 @@ MonoBehaviour:
   filledImage: {fileID: 0}
   timer_text: {fileID: 0}
   isDodge: 0
+  targetPosition: {x: 0, y: 0, z: 0}
   delay: 0.2
   PopupDamgae: {fileID: 1389805072928718, guid: 1352384932d38eb4ea282b09ed41a496,
     type: 2}
@@ -21155,6 +21173,9 @@ MonoBehaviour:
   Blessing: {fileID: 100004, guid: d9751637d4fc2de40a234b45e10cb88d, type: 2}
   Stregnthen: {fileID: 100000, guid: 0211f56c1dcc00f479c8d7342db06c51, type: 2}
   dodgeEffect: {fileID: 100012, guid: 0a7192368c7507b4f95fbbcb91166346, type: 2}
+  partner: {fileID: 0}
+  pet: {fileID: 0}
+  currentPet: {fileID: 0}
 --- !u!114 &114707103811230390
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -21731,15 +21752,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 10000
-  normalAttack: 50
+  normalAttack: 10
   attackDistance: 1.5
+  animator: {fileID: 0}
   death: {fileID: 8300000, guid: 4ecf468c346af0e47b10267c840f2c25, type: 3}
   attackB: 80
   attackRange: 100
   attackGun: 100
   gun: {fileID: 114256737254855970}
   shot: {fileID: 8300000, guid: 41340cc6d49be6343a13113f5671a38a, type: 3}
-  sword: {fileID: 8300000, guid: 35c5b16df12600f4388ad1e5f644b4a1, type: 3}
+  sword: {fileID: 0}
   PopupDamgae: {fileID: 1389805072928718, guid: 1352384932d38eb4ea282b09ed41a496,
     type: 2}
 --- !u!114 &114734625085498848
@@ -22249,6 +22271,7 @@ MonoBehaviour:
   filledImage: {fileID: 0}
   timer_text: {fileID: 0}
   isDodge: 0
+  targetPosition: {x: 0, y: 0, z: 0}
   delay: 0.2
   PopupDamgae: {fileID: 1389805072928718, guid: 1352384932d38eb4ea282b09ed41a496,
     type: 2}
@@ -22257,6 +22280,9 @@ MonoBehaviour:
   Blessing: {fileID: 100004, guid: d9751637d4fc2de40a234b45e10cb88d, type: 2}
   Stregnthen: {fileID: 0}
   dodgeEffect: {fileID: 0}
+  partner: {fileID: 0}
+  pet: {fileID: 0}
+  currentPet: {fileID: 0}
 --- !u!114 &114759915750320200
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -24742,7 +24768,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u50B2\u89C6\u76D4\u7532"
+  m_Text: Necklace
 --- !u!114 &114960332994629472
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -25172,7 +25198,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 4300006, guid: 3815ac7af1c045d4d899f832527d7ace, type: 3}
+  m_Mesh: {fileID: 4300004, guid: 129c308549a2b9b4cb644ebed133abac, type: 3}
   m_Bones:
   - {fileID: 4442856701703226}
   - {fileID: 4013482580146234}
@@ -28290,7 +28316,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1942145173757306}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.09927368, y: -27609.379, z: 0}
+  m_LocalPosition: {x: -0.09927368, y: -4254.099, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224177394603682450}
@@ -28304,7 +28330,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.09926881, y: -27609.379}
+  m_AnchoredPosition: {x: -0.09926881, y: -4254.099}
   m_SizeDelta: {x: -41.9, y: 271.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224233417677412664

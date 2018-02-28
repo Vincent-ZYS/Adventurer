@@ -18,6 +18,8 @@ public class Inventory : MonoBehaviour {
     public List<int> memorizeShortCut = new List<int>();
     public GameObject drop_panel;
     public int tempId;
+    [Header("ShortCut数组")]
+    public ObjectShortCut[] shortCuts;
     void Awake()
     {
         instance = this;
@@ -184,7 +186,60 @@ public class Inventory : MonoBehaviour {
 
                 }
             }
-           
+
+        }
+        else
+        {
+            ObjectInfo tempObjectInfo = ObjectsInfo.instance.GetObjectInfoById(tempId);
+            if(tempObjectInfo.type==ObjcetType.Drug)
+            {
+                
+                if(tempId%2==0)//血药
+                {
+                    foreach (ObjectShortCut temp in shortCuts)
+                    {
+                        if (temp.drugType == ShortCutType.Hp)
+                        {
+                            temp.id = tempId;
+                            temp.thisInfo = tempObjectInfo;
+                            temp.gameObject.SetActive(true);
+                            temp.image.sprite= Resources.Load("UI/Sprite/" + tempObjectInfo.icon_name, typeof(Sprite)) as Sprite;
+                            foreach (InventoryGrid tempGrid in itemGridList)
+                            {
+                                if(tempGrid.id==tempId)
+                                {
+                                    temp.number.text = tempGrid.num.ToString();
+                                }
+                            }
+
+
+                        }
+                    }
+                }
+                else//蓝药
+                {
+                    foreach (ObjectShortCut temp in shortCuts)
+                    {
+                        if (temp.drugType == ShortCutType.Mp)
+                        {
+                            temp.id = tempId;
+                            temp.id = tempId;
+                            temp.thisInfo = tempObjectInfo;
+                            temp.gameObject.SetActive(true);
+                            temp.image.sprite = Resources.Load("UI/Sprite/" + tempObjectInfo.icon_name, typeof(Sprite)) as Sprite;
+                            foreach (InventoryGrid tempGrid in itemGridList)
+                            {
+                                if (tempGrid.id == tempId)
+                                {
+                                    temp.number.text = tempGrid.num.ToString();
+                                }
+                            }
+
+                        }
+                    }
+                }
+            }
+            
         }
     }
  

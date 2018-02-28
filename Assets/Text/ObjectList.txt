@@ -1,5 +1,5 @@
-1001,HPDrug,icon-potion1,Drug,50,0,50,60
-1002,MPDrug,icon-potion2,Drug,0,100,60,80
+1001,HPDrug,icon-potion1,Drug,50,0,50,60,30
+1002,MPDrug,icon-potion2,Drug,0,100,60,80,30
 1003,Armor,icon-potion3,Equip,0,50,0,Armor,Swordman,150,200
 1004,Shield,icon-potion4,Equip,0,50,0,LeftHand,Common,50,70
 1005,Sword,icon-potion5,Equip,40,0,0,RightHand,Swordman,40,80

@@ -34,7 +34,7 @@ public class SkillShortCut : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     private float lastIsDownTime;//最后一次点击技能按钮的时间
     [Header("Pet")]
     public GameObject pet;
-    [HideInInspector]
+    
     public GameObject currentPet = null;
    void Awake()
     {

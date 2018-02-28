@@ -24,7 +24,6 @@ public class Scavenger : MonoBehaviour {
             if (index == -1)
             {
                 SkillInfo info = SkillsInfo.instance.GetSkillInfoById(skill_id);
-                Debug.Log(info.applyValue);
                 enemy.TakeDamage(info.applyValue*(PlayerStatus.instance.attack+PlayerStatus.instance.attack_plus)/100);
                 if (enemy.tag == Tags.soulBoss)
                 {
